@@ -5,19 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Muhammet Mustafa HASTAOĞLUGİL Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
+
+    <!-- Google Fonts - Montserrat -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
     <style>
         /* Temel stil düzenlemeleri */
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'Montserrat', sans-serif;
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             background-color: #f4f4f4;
         }
 
+        /* Header için Gradient ve Yazı Tipi */
         header {
-            background-color: #333;
+            background: linear-gradient(45deg, #333, #444, #555);
             color: white;
             padding: 20px 0;
             text-align: center;
@@ -28,6 +35,7 @@
             font-size: 2.5em;
         }
 
+        /* Kendini Tanıtma Bölümü */
         .about {
             padding: 50px;
             background-color: #fff;
@@ -53,6 +61,7 @@
             border: 5px solid #333;
         }
 
+        /* Projeler Bölümü */
         .projects {
             padding: 50px;
             text-align: center;
@@ -64,35 +73,36 @@
             margin-bottom: 30px;
         }
 
-        /* Proje çerçevelerini smooth yapmak ve boyutları eşitlemek */
+        /* Proje Kartları */
         .project-item {
             display: inline-block;
             width: 400px;
             margin: 20px;
-            background-color: #1C2833;  /* Başlangıçta koyu arka plan */
+            background-color: #2C2C2C;
             padding: 20px;
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
             border-radius: 15px;
             vertical-align: top;
-            color: #fff; /* Başlangıçta beyaz yazı */
-            transition: all 0.5s ease;  /* Smooth geçiş ekledik */
+            color: #fff;
+            transition: all 0.5s ease;
         }
 
-        /* Hover efekti - arka plan beyaza döner, çerçeve büyür */
+        /* Hover Efekti */
         .project-item:hover {
-            transform: scale(1.1);  /* Hafif büyüme efekti */
-            background-color: #fff;  /* Arka plan beyaza döner */
-            color: #333;  /* Yazı rengi koyulaşır */
-            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* Shadow yoğunlaşır */
+            transform: scale(1.1);
+            background-color: #fff;
+            color: #333;
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
         }
 
+        /* Proje Video ve Thumbnail */
         .project-item video, .project-item iframe {
             width: 100%;
-            height: 225px;  /* Videoların ve iframe'lerin yüksekliği ayarlandı */
+            height: 225px;
             border-radius: 8px;
         }
 
-        /* Iconları düzgün göstermek ve büyütmek */
+        /* Proje İkonları */
         .project-links {
             margin-top: 15px;
             display: flex;
@@ -105,15 +115,33 @@
         }
 
         .project-links img {
-            width: 60px;  /* İkonları büyüttük */
+            width: 60px;
             height: 60px;
-            object-fit: contain;  /* Simgeleri düzgün boyutlandırır */
+            object-fit: contain;
         }
 
+        /* Sosyal Medya İkonları - Font Awesome */
+        .social-icons {
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .social-icons a {
+            margin: 0 10px;
+            color: #555;
+            font-size: 24px;
+            text-decoration: none;
+        }
+
+        .social-icons a:hover {
+            color: #3498db;
+        }
+
+        /* Footer Bölümü */
         footer {
             text-align: center;
             padding: 20px;
-            background-color: #333;
+            background: linear-gradient(45deg, #333, #444, #555);
             color: white;
         }
 
@@ -121,9 +149,36 @@
             margin: 0;
             font-size: 1em;
         }
+
+        footer a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 5px;
+        }
+
+        /* Yüklenme Animasyonu */
+        .loader {
+            border: 8px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 8px solid #3498db;
+            width: 60px;
+            height: 60px;
+            animation: spin 2s linear infinite;
+            margin: 100px auto;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
     </style>
 </head>
 <body>
+
+    <!-- Yüklenme Animasyonu -->
+    <div class="loader" id="loader"></div>
+
     <!-- Header Bölümü -->
     <header>
         <h1>Muhammet Mustafa HASTAOĞLUGİL Portfolio</h1>
@@ -131,24 +186,21 @@
 
     <!-- Kendini Tanıtma Bölümü -->
     <section class="about">
-    <h2>About Me</h2>
-    <img src="profile.jpg" alt="Profile Picture" style="display: none;">
-    <p>
-        Hello! I'm Muhammet Mustafa HASTAOĞLUGİL, a passionate computer engineer specializing in software development. I love building innovative projects and exploring new technologies.
-    </p>
-</section>
+        <h2>About Me</h2>
+        <img src="profile.jpg" alt="Profile Picture" style="display: none;">
+        <p>Hello! I'm Muhammet Mustafa HASTAOĞLUGİL, a passionate computer engineer specializing in software development. I love building innovative projects and exploring new technologies.</p>
+    </section>
 
     <!-- Projeler Bölümü -->
     <section class="projects">
         <h2>My Projects</h2>
-        
+
         <div class="project-item">
             <h3>Project 1</h3>
             <video controls>
                 <source src="project1.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
-            <!-- Linkler -->
             <div class="project-links">
                 <a href="https://play.google.com/store/apps/details?id=com.example.android">
                     <img src="android-icon.png" alt="Android">
@@ -158,14 +210,13 @@
                 </a>
             </div>
         </div>
-        
+
         <div class="project-item">
             <h3>Project 2</h3>
             <video controls>
                 <source src="project2.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
-            <!-- Linkler -->
             <div class="project-links">
                 <a href="https://play.google.com/store/apps/details?id=com.example.android">
                     <img src="android-icon.png" alt="Android">
@@ -175,12 +226,10 @@
                 </a>
             </div>
         </div>
-        
+
         <div class="project-item">
             <h3>My Tasty Empire</h3>
-            <iframe width="100%" height="225" src="https://www.youtube.com/embed/KYoJAuQ7C14" 
-                    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            <!-- Linkler -->
+            <iframe width="100%" height="225" src="https://www.youtube.com/embed/KYoJAuQ7C14" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             <div class="project-links">
                 <a href="https://play.google.com/store/apps/details?id=com.example.android">
                     <img src="android-icon.png" alt="Android">
@@ -193,9 +242,25 @@
 
     </section>
 
+    <!-- Sosyal Medya İkonları -->
+    <div class="social-icons">
+        <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
+    </div>
+
     <!-- Footer Bölümü -->
     <footer>
-        <p>&copy; 2024 Muhammet Mustafa HASTAOĞLUGİL</p>
+        <p>&copy; 2024 Muhammet Mustafa HASTAOĞLUGİL. All Rights Reserved.</p>
+        <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
     </footer>
+
+    <script>
+        // Sayfa yüklenirken loader'ı göster
+        window.onload = function() {
+            document.getElementById('loader').style.display = 'none';
+        };
+    </script>
+
 </body>
 </html>
