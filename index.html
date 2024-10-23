@@ -97,7 +97,7 @@
 
         /* Hover Efekti */
         .project-item:hover {
-            transform: scale(1.1);
+            transform: scale(1.05); /* Hafif büyütme */
             background-color: #fff;
             color: #333;
             box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
@@ -115,19 +115,27 @@
             margin-top: 15px;
             display: flex;
             justify-content: center;
+            gap: 20px; /* İkonlar arasında boşluk */
         }
 
         .project-links a {
             text-decoration: none;
-            margin: 0 10px;
         }
 
         .project-links img {
-            width: 120px;  
-            height: 120px; 
-            object-fit: contain;
-            margin: 10px; 
-}
+            width: 80px; /* Boyutları ayarladık */
+            height: 80px; /* Yükseklik */
+            background-color: white; /* Arka plan rengi */
+            padding: 10px; /* İkonlara iç boşluk ekledik */
+            border-radius: 10px; /* Hafif yuvarlak köşeler */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Hafif gölge efekti */
+            transition: all 0.3s ease; /* Smooth geçiş */
+        }
+
+        .project-links img:hover {
+            transform: translateY(-5px); /* Hover'da hafif yukarı kalkma efekti */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Gölgede artış */
+        }
 
         /* Sosyal Medya İkonları - Font Awesome */
         .social-icons {
@@ -236,14 +244,4 @@
     <div class="social-icons">
         <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
         <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
-        <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
-    </div>
-
-    <!-- Footer Bölümü -->
-    <footer>
-        <p>&copy; 2024 Muhammet Mustafa HASTAOĞLUGİL. All Rights Reserved.</p>
-        <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
-    </footer>
-
-</body>
-</html>
+        <a href="https://github.com" target="_blank"><
