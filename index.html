@@ -7,7 +7,7 @@
     <title>Muhammet Mustafa HASTAOĞLUGİL Portfolio</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-        /* Basit stil eklemesi */
+        /* Temel stil düzenlemeleri */
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
@@ -64,23 +64,30 @@
             margin-bottom: 30px;
         }
 
+        /* Proje çerçevelerini smooth yapmak ve boyutları eşitlemek */
         .project-item {
             display: inline-block;
             width: 400px;
             margin: 20px;
             background-color: white;
             padding: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;  /* Daha yuvarlak kenarlar */
             vertical-align: top;
+            transition: transform 0.3s ease;  /* Hover efekti için geçiş */
+        }
+
+        .project-item:hover {
+            transform: scale(1.05);  /* Hover üzerinde biraz büyütme efekti */
         }
 
         .project-item video, .project-item iframe {
             width: 100%;
-            height: auto;
-            border-radius: 5px;
+            height: 225px;  /* Videoların ve iframe'lerin yüksekliği ayarlandı */
+            border-radius: 8px;
         }
 
+        /* Iconları düzgün göstermek */
         .project-links {
             margin-top: 15px;
             display: flex;
@@ -95,6 +102,7 @@
         .project-links img {
             width: 40px;
             height: 40px;
+            object-fit: contain;  /* Simgeleri düzgün boyutlandırır */
         }
 
         footer {
@@ -165,7 +173,7 @@
         
         <div class="project-item">
             <h3>My Tasty Empire</h3>
-            <iframe width="800" height="400" src="https://www.youtube.com/embed/KYoJAuQ7C14" 
+            <iframe width="100%" height="225" src="https://www.youtube.com/embed/KYoJAuQ7C14" 
                     frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             <!-- Linkler -->
             <div class="project-links">
