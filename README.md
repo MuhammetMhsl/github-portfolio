@@ -4,7 +4,7 @@ I'm a passionate **Computer Engineer** with a strong interest in developing inno
 
 ## 🛠 Skills & Technologies
 - **Programming Languages:** Python, C#, Java, JavaScript, C++
-- **Mobile Development:** Flutter, Android (Kotlin)
+- **Mobile Development:** Flutter, Android (Java)
 - **Game Development:** Unity, C#
 - **Database Management:** MySQL, Firebase
 - **Cloud Services:** Firebase, Google Cloud
