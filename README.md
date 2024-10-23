@@ -15,7 +15,7 @@ I'm a passionate **Computer Engineer** with a strong interest in developing inno
 - **LinkedIn:** [**LinkedIn**](https://www.linkedin.com/in/muhammet-mustafa-hastao%C4%9Flugil-420999236/)
 
 ## 👨‍💻 Projects
-***Gun Plus Fever***  
+## Gun Plus Fever
 - iOS: [App Store](https://apps.apple.com/tr/app/gun-plus-fever/id6449928628)  
 - Android: [Google Play](https://play.google.com/store/apps/details?id=com.BoomCodes.GunPlusFever&hl=en)
 
