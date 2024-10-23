@@ -3,7 +3,7 @@
 I'm a passionate **Computer Engineer** with a strong interest in developing innovative solutions and learning new technologies. With a background in software development, I'm always eager to take on new challenges and contribute to impactful projects.
 
 ## 🛠 Skills & Technologies
-- ***Programming Languages:*** Python, C#, Java, JavaScript, C
+- **Programming Languages:** Python, C#, Java, JavaScript, C
 - **Mobile Development:** Flutter, Android (Java)
 - **Game Development:** Unity, C#
 - **Database Management:** MySQL, Firebase
