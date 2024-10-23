@@ -19,7 +19,11 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            background-color: #f4f4f4;
+            background-image: url('background-image.jpg'); /* Arka plan resmi */
+            background-size: cover; /* Resmi kapla */
+            background-position: center; /* Ortala */
+            background-attachment: fixed; /* Parallax efekti */
+            background-repeat: no-repeat; /* Tekrar etme */
         }
 
         /* Header için Gradient ve Yazı Tipi */
@@ -38,8 +42,10 @@
         /* Kendini Tanıtma Bölümü */
         .about {
             padding: 50px;
-            background-color: #fff;
+            background-color: rgba(255, 255, 255, 0.8); /* Yarı saydam arka plan */
             text-align: center;
+            border-radius: 15px;
+            margin: 20px;
         }
 
         .about h2 {
@@ -65,7 +71,9 @@
         .projects {
             padding: 50px;
             text-align: center;
-            background-color: #fafafa;
+            background-color: rgba(255, 255, 255, 0.8); /* Yarı saydam arka plan */
+            border-radius: 15px;
+            margin: 20px;
         }
 
         .projects h2 {
@@ -246,21 +254,4 @@
     <div class="social-icons">
         <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
         <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
-        <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
-    </div>
-
-    <!-- Footer Bölümü -->
-    <footer>
-        <p>&copy; 2024 Muhammet Mustafa HASTAOĞLUGİL. All Rights Reserved.</p>
-        <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
-    </footer>
-
-    <script>
-        // Sayfa yüklenirken loader'ı göster
-        window.onload = function() {
-            document.getElementById('loader').style.display = 'none';
-        };
-    </script>
-
-</body>
-</html>
+        <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></
