@@ -10,13 +10,12 @@ I'm a passionate **Computer Engineer** with a strong interest in developing inno
 - **Cloud Services:** Firebase, Google Cloud
 - **Version Control:** Git, GitHub, GitLab
 
-## 🌱 Currently Learning
-- Advanced **Cloud Computing** and **DevOps** techniques.
-- Enhancing skills in **AI/ML** and **Data Science**.
-- Exploring **Blockchain** technologies.
-
 ## 👨‍💻 Projects
-- [**MyTastyEmpire**](https://github.com/username/mytastyempire): A hybrid arcade-idle game where you run a restaurant empire.
+- [**Gun Plus Fever**]  
+- iOS: [App Store](https://apps.apple.com/tr/app/gun-plus-fever/id6449928628)  
+- Android: [Google Play](https://play.google.com/store/apps/details?id=com.BoomCodes.GunPlusFever&hl=en)  
+A hybrid casual runner game where players upgrade weapons while overcoming obstacles and facing powerful enemies. The game has been downloaded over 1 million times on iOS and Android.
+
 - [**Blossom Craze**](https://github.com/username/blossomcraze): A flower shop-themed mobile game with AI-driven mechanics.
 - [**Personal Website**](https://github.com/username/personal-website): My portfolio and blog built with React and hosted on GitHub Pages.
 
