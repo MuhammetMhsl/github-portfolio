@@ -25,5 +25,11 @@ I'm a passionate **Computer Engineer** with a strong interest in developing inno
 
 An arcade idle game where players manage and expand their own restaurant empire.
 
+## Bottle Runner Gun  
+- iOS: [App Store](https://apps.apple.com/us/app/bottle-runner-gun/id6453169545)  
+- Android: [Google Play](https://play.google.com/store/apps/details?id=com.BoomCodes.BottleRunnerGun)  
+
+A fun and unique game where players shoot marbles into bottles with their gun, aiming to fill them up and explode the bottle at the end.
+
 
 Feel free to check out my repositories for more of my work! 😊
