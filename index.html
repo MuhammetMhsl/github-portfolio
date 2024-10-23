@@ -126,8 +126,18 @@
             width: 120px;  
             height: 120px; 
             object-fit: contain;
-            margin: 10px; 
-}
+            margin: 10px;
+            transition: all 0.3s ease-in-out;  /* Smooth geçiş efekti */
+            border-radius: 10px;  /* Yuvarlak köşeler */
+        }
+
+        .project-links img:hover {
+            transform: scale(1.1);  /* Hover'da hafif büyütme */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);  /* Daha belirgin gölge */
+            background-color: #f0f0f0;  /* Hafif bir arka plan rengi değişikliği */
+            cursor: pointer;  /* Fare imlecini el simgesine çevirir */
+            filter: brightness(1.2);  /* Hafif parlaklık efekti */
+        }
 
         /* Sosyal Medya İkonları - Font Awesome */
         .social-icons {
