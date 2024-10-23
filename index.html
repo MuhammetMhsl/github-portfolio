@@ -69,17 +69,21 @@
             display: inline-block;
             width: 400px;
             margin: 20px;
-            background-color: #333;  /* Arka planı koyu yaptık */
+            background-color: #333;  /* Başlangıçta koyu arka plan */
             padding: 20px;
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-            border-radius: 15px;  /* Daha yuvarlak kenarlar */
+            border-radius: 15px;
             vertical-align: top;
-            transition: transform 0.3s ease;  /* Hover efekti için geçiş */
-            color: #fff; /* Yazı rengini beyaz yaptık */
+            color: #fff; /* Başlangıçta beyaz yazı */
+            transition: all 0.5s ease;  /* Smooth geçiş ekledik */
         }
 
+        /* Hover efekti - arka plan beyaza döner, çerçeve büyür */
         .project-item:hover {
-            transform: scale(1.05);  /* Hover üzerinde biraz büyütme efekti */
+            transform: scale(1.1);  /* Hafif büyüme efekti */
+            background-color: #fff;  /* Arka plan beyaza döner */
+            color: #333;  /* Yazı rengi koyulaşır */
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* Shadow yoğunlaşır */
         }
 
         .project-item video, .project-item iframe {
