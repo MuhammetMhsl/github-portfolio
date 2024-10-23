@@ -22,6 +22,6 @@ A hybrid casual runner game where players upgrade weapons while overcoming obsta
 
 ## 📫 How to reach me:
 - **Email:** mmhasta@gmail.com
-- **LinkedIn:[**LinkedIn**](https://www.linkedin.com/in/muhammet-mustafa-hastao%C4%9Flugil-420999236/)
+- **LinkedIn:**[**LinkedIn**](https://www.linkedin.com/in/muhammet-mustafa-hastao%C4%9Flugil-420999236/)
 
 Feel free to check out my repositories for more of my work! 😊
