@@ -69,12 +69,13 @@
             display: inline-block;
             width: 400px;
             margin: 20px;
-            background-color: white;
+            background-color: #333;  /* Arka planı koyu yaptık */
             padding: 20px;
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
             border-radius: 15px;  /* Daha yuvarlak kenarlar */
             vertical-align: top;
             transition: transform 0.3s ease;  /* Hover efekti için geçiş */
+            color: #fff; /* Yazı rengini beyaz yaptık */
         }
 
         .project-item:hover {
@@ -87,7 +88,7 @@
             border-radius: 8px;
         }
 
-        /* Iconları düzgün göstermek */
+        /* Iconları düzgün göstermek ve büyütmek */
         .project-links {
             margin-top: 15px;
             display: flex;
@@ -100,8 +101,8 @@
         }
 
         .project-links img {
-            width: 40px;
-            height: 40px;
+            width: 60px;  /* İkonları büyüttük */
+            height: 60px;
             object-fit: contain;  /* Simgeleri düzgün boyutlandırır */
         }
 
