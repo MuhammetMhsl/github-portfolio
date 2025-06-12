@@ -2,386 +2,234 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Muhammet Mustafa HASTAOĞLUGİL Portfolio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Muhammet Mustafa HASTAOĞLUGİL Portfolio</title>
 
-    <!-- Google Fonts - Montserrat -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+  <script src="three.min.js"></script>
 
-    <!-- Font Awesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+  <style>
+    :root {
+      --bg-color: #f8fafc;
+      --text-color: #1f2937;
+      --card-bg: #ffffff;
+      --accent: #3b82f6;
+      --shadow: rgba(0, 0, 0, 0.05);
+    }
 
-    <!-- Three.js Kütüphanesi -->
-    <script src="three.min.js"></script>
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.6;
+    }
 
+    #bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      width: 100vw;
+      height: 100vh;
+    }
 
-    <style>
-        #bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            z-index: -1;
-            width: 100vw;
-            height: 100vh;
-        }
+    header {
+      padding: 2rem 1rem;
+      background-color: var(--accent);
+      color: white;
+      text-align: center;
+    }
 
-        body {
-            font-family: 'Montserrat', sans-serif;
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            background-image: url('background-image.jpg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            background-repeat: no-repeat;
-        }
+    header h1 {
+      font-size: 2.5rem;
+      margin: 0;
+    }
 
-        header {
-            background: linear-gradient(45deg, #333, #444, #555);
-            color: white;
-            padding: 20px 0;
-            text-align: center;
-        }
+    .about,
+    .projects {
+      max-width: 1100px;
+      margin: 2rem auto;
+      background: var(--card-bg);
+      border-radius: 12px;
+      box-shadow: 0 4px 12px var(--shadow);
+      padding: 2rem;
+    }
 
-        header h1 {
-            margin: 0;
-            font-size: 2.5em;
-        }
+    .about h2,
+    .projects h2 {
+      margin-bottom: 1rem;
+      color: var(--accent);
+    }
 
-        .about {
-            padding: 30px;
-            background-color: rgba(255, 255, 255, 0.8);
-            text-align: center;
-            border-radius: 10px;
-            margin: 15px;
-        }
+    .about ul {
+      list-style: none;
+      padding: 0;
+    }
 
-        .about h2 {
-            font-size: 1.8em;
-            margin-bottom: 15px;
-        }
+    .about ul li {
+      padding: 0.25rem 0;
+    }
 
-        .about p {
-            font-size: 1em;
-            color: #666;
-            margin-bottom: 20px;
-        }
+    .project-grid {
+      display: grid;
+      gap: 1.5rem;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      margin-top: 2rem;
+    }
 
-        .projects {
-            padding: 50px;
-            text-align: center;
-            background-color: rgba(255, 255, 255, 0.8);
-            border-radius: 15px;
-            margin: 20px;
-        }
+    .project-item {
+      background-color: var(--card-bg);
+      border-radius: 12px;
+      box-shadow: 0 4px 8px var(--shadow);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s;
+    }
 
-        .project-item {
-            display: inline-block;
-            width: 400px;
-            margin: 20px;
-            background-color: #333;
-            padding: 20px;
-            color: white;
-            border-radius: 15px;
-            transition: 0.3s ease;
-        }
+    .project-item:hover {
+      transform: translateY(-5px);
+    }
 
-        .project-item:hover {
-            transform: scale(1.05);
-            background: white;
-            color: black;
-        }
+    .project-item iframe {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border: none;
+    }
 
-        .project-item iframe,
-        .project-item video {
-            width: 100%;
-            height: 225px;
-            border-radius: 8px;
-        }
+    .project-item h3 {
+      padding: 1rem;
+      margin: 0;
+      font-size: 1.1rem;
+      color: var(--text-color);
+      background-color: #f1f5f9;
+    }
 
-        .project-links {
-            margin-top: 10px;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
+    .project-links {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      padding: 1rem;
+    }
 
-        .project-links img {
-            height: 40px;
-            width: auto;
-            object-fit: contain;
-        }
+    .project-links img {
+      height: 40px;
+      transition: transform 0.2s;
+    }
 
-        .social-icons {
-            text-align: center;
-            padding: 20px;
-        }
+    .project-links img:hover {
+      transform: scale(1.1);
+    }
 
-        .social-icons a {
-            margin: 0 10px;
-            font-size: 24px;
-            color: #444;
-        }
+    .social-icons {
+      text-align: center;
+      padding: 20px;
+    }
 
-        .social-icons a:hover {
-            color: #3498db;
-        }
+    .social-icons a {
+      margin: 0 10px;
+      font-size: 24px;
+      color: #444;
+    }
 
-        footer {
-            text-align: center;
-            padding: 20px;
-            background: linear-gradient(45deg, #333, #444, #555);
-            color: white;
-        }
-    </style>
+    .social-icons a:hover {
+      color: var(--accent);
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      background-color: var(--accent);
+      color: white;
+      margin-top: 4rem;
+    }
+
+    #theme-toggle {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      background-color: white;
+      color: var(--accent);
+      border: 2px solid var(--accent);
+      padding: 0.5rem 1rem;
+      font-weight: bold;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      z-index: 1000;
+    }
+
+    #theme-toggle:hover {
+      background-color: var(--accent);
+      color: white;
+    }
+  </style>
 </head>
 
 <body>
-    <canvas id="bg"></canvas>
+  <canvas id="bg"></canvas>
+  <button id="theme-toggle">🌓 Theme</button>
 
-    <header>
-        <h1>Muhammet Mustafa HASTAOĞLUGİL Portfolio</h1>
-    </header>
+  <header>
+    <h1>Muhammet Mustafa HASTAOĞLUGİL Portfolio</h1>
+  </header>
 
-    <section class="about">
-        <h2>About Me</h2>
-        <p>Hi there, I'm Muhammet Mustafa HASTAOĞLUGİL! 👋</p>
-        <p>I'm a passionate <strong>Computer Engineer</strong> with experience in game and mobile app development.</p>
+  <section class="about">
+    <h2>About Me</h2>
+    <p>Hi there, I'm Muhammet Mustafa HASTAOĞLUGİL! 👋</p>
+    <p>I'm a passionate <strong>Computer Engineer</strong> with experience in game and mobile app development.</p>
 
-        <h3>🛠 Skills & Technologies</h3>
-        <ul>
-            <li><strong>Programming Languages:</strong> Python, C#, Java, JavaScript, C</li>
-            <li><strong>Mobile Development:</strong> Flutter, Android (Java)</li>
-            <li><strong>Game Development:</strong> Unity, C#</li>
-            <li><strong>Database:</strong> MySQL, Firebase</li>
-            <li><strong>Cloud:</strong> Firebase, Google Cloud</li>
-            <li><strong>Version Control:</strong> Git, GitHub, GitLab</li>
-        </ul>
-    </section>
+    <h3>🛠 Skills & Technologies</h3>
+    <ul>
+      <li><strong>Programming Languages:</strong> Python, C#, Java, JavaScript, C</li>
+      <li><strong>Mobile Development:</strong> Flutter, Android (Java)</li>
+      <li><strong>Game Development:</strong> Unity, C#</li>
+      <li><strong>Database:</strong> MySQL, Firebase</li>
+      <li><strong>Cloud:</strong> Firebase, Google Cloud</li>
+      <li><strong>Version Control:</strong> Git, GitHub, GitLab</li>
+    </ul>
+  </section>
 
-    <section class="projects">
-        <h2>My Projects</h2>
-
-        <div class="project-item">
-            <h3>Gun Plus Fever!</h3>
-            <iframe width="100%" height="225" src="https://youtube.com/embed/uhNxvZipnQ8" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen></iframe>
-            <div class="project-links">
-                <a href="https://play.google.com/store/apps/details?id=com.BoomCodes.GunPlusFever&hl=en">
-                    <img src="android-icon.png" alt="Android">
-                </a>
-                <a href="https://apps.apple.com/tr/app/gun-plus-fever/id6449928628">
-                    <img src="ios-icon.png" alt="iOS">
-                </a>
-            </div>
+  <section class="projects">
+    <h2>My Projects</h2>
+    <div class="project-grid">
+      <div class="project-item">
+        <h3>Gun Plus Fever!</h3>
+        <iframe src="https://youtube.com/embed/uhNxvZipnQ8" allowfullscreen></iframe>
+        <div class="project-links">
+          <a href="https://play.google.com/store/apps/details?id=com.BoomCodes.GunPlusFever&hl=en">
+            <img src="android-icon.png" alt="Android">
+          </a>
+          <a href="https://apps.apple.com/tr/app/gun-plus-fever/id6449928628">
+            <img src="ios-icon.png" alt="iOS">
+          </a>
         </div>
-
-        <div class="project-item">
-            <h3>Bottle Runner Gun</h3>
-            <iframe width="100%" height="225" src="https://youtube.com/embed/NyJEd7xxyP4?feature=share" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen></iframe>
-            <div class="project-links">
-                <a href="https://play.google.com/store/apps/details?id=com.BoomCodes.BottleRunnerGun">
-                    <img src="android-icon.png" alt="Android">
-                </a>
-                <a href="https://apps.apple.com/us/app/bottle-runner-gun/id6453169545">
-                    <img src="ios-icon.png" alt="iOS">
-                </a>
-            </div>
-        </div>
-
-        <div class="project-item">
-            <h3>My Tasty Empire</h3>
-            <iframe src="https://www.youtube.com/embed/xwZl2fbaeZI" allowfullscreen></iframe>
-            <div class="project-links">
-                <a href="https://play.google.com/store/apps/details?id=com.BoomCodes.MyTastyEmpire&hl=en">
-                    <img src="android-icon.png" alt="Android">
-                </a>
-                <a href="https://apps.apple.com/us/app/my-tasty-empire/id6502766369">
-                    <img src="ios-icon.png" alt="iOS">
-                </a>
-            </div>
-        </div>
-
-        <div class="project-item">
-            <h3>My Snack Empire</h3>
-            <iframe src="https://youtube.com/embed/Z5BVKtJWGOA?feature=share" allowfullscreen></iframe>
-            <div class="project-links">
-                <a href="https://play.google.com/store/apps/details?id=com.BoomCodes.MySnackEmpire&hl=tr">
-                    <img src="android-icon.png" alt="Android">
-                </a>
-                <a href="https://apps.apple.com/us/app/my-snack-empire/id6736908202">
-                    <img src="ios-icon.png" alt="iOS">
-                </a>
-            </div>
-        </div>
-
-        <div class="project-item">
-            <h3>My Berry Farm</h3>
-            <iframe src="https://youtube.com/embed/KsdSxgSVejQ?feature=share" allowfullscreen></iframe>
-            <div class="project-links">
-                <a href="https://play.google.com/store/apps/details?id=com.BoomCodes.MyBerryFarm">
-                    <img src="android-icon.png" alt="Android">
-                </a>
-                <a href="https://apps.apple.com/ec/app/my-berry-farm/id6636528155?l=en-GB">
-                    <img src="ios-icon.png" alt="iOS">
-                </a>
-            </div>
-        </div>
-
-        <div class="project-item">
-            <h3>Forkdrift Master</h3>
-            <iframe src="https://youtube.com/embed/cRZ4XDmf2RQ?feature=share" allowfullscreen></iframe>
-            <div class="project-links">
-                <a href="https://apps.apple.com/us/app/forkdrift-master/id1638728632">
-                    <img src="ios-icon.png" alt="iOS">
-                </a>
-            </div>
-        </div>
-
-        <div class="project-item">
-            <h3>Wheel Up Clicker</h3>
-            <iframe src="https://youtube.com/embed/Gu-XTNs5ZvI?feature=share" allowfullscreen></iframe>
-            <div class="project-links">
-                <a href="https://apps.apple.com/us/app/wheel-up-clicker/id1659596791">
-                    <img src="ios-icon.png" alt="iOS">
-                </a>
-            </div>
-        </div>
-
-
-        <div class="project-item">
-            <h3>Try Higher</h3>
-            <iframe src="https://youtube.com/embed/VgujLQnEcbY?feature=share" allowfullscreen></iframe>
-            <div class="project-links">
-                <a href="https://apps.apple.com/us/app/try-higher/id1626437505">
-                    <img src="ios-icon.png" alt="iOS">
-                </a>
-            </div>
-        </div>
-
-        <div class="project-item">
-            <h3>Crowd Busters</h3>
-            <iframe src="https://youtube.com/embed/zYS3Kfp4cl8?feature=share" allowfullscreen></iframe>
-            <div class="project-links">
-                <a href="https://play.google.com/store/apps/details?id=com.BoomCodes.CrowdBusters">
-                    <img src="android-icon.png" alt="Android">
-                </a>
-                <a href="https://apps.apple.com/ec/app/crowd-busters/id6459474589?l=en-GB">
-                    <img src="ios-icon.png" alt="iOS">
-                </a>
-            </div>
-        </div>
-
-        <div class="project-item">
-            <h3>Poly Smash Ball</h3>
-            <iframe src="https://youtube.com/embed/QqQ3u8zOjC4?feature=share" allowfullscreen></iframe>
-            <div class="project-links">
-                <a href="https://apps.apple.com/us/app/poly-smash-ball/id6443899879">
-                    <img src="ios-icon.png" alt="iOS">
-                </a>
-            </div>
-        </div>
-
-        <div class="project-item">
-            <h3>Voxel Crusher Run</h3>
-            <iframe src="https://youtube.com/embed/CJcBnCtnMcE?feature=share" allowfullscreen></iframe>
-            <div class="project-links">
-                <a href="https://play.google.com/store/apps/details?id=com.BoomCodes.VoxelCrusherRun">
-                    <img src="android-icon.png" alt="Android">
-                </a>
-                <a href="https://apps.apple.com/us/app/voxel-crusher-run/id6447962131">
-                    <img src="ios-icon.png" alt="iOS">
-                </a>
-            </div>
-        </div>
-
-        <div class="project-item">
-            <h3>Coin Surfer</h3>
-            <iframe src="https://youtube.com/embed/qQKNu_yu7FY?feature=share" allowfullscreen></iframe>
-            <div class="project-links">
-                <a href="https://apps.apple.com/us/app/coin-surfer/id6444552017">
-                    <img src="ios-icon.png" alt="iOS">
-                </a>
-            </div>
-        </div>
-
-        <div class="project-item">
-            <h3>Saw Car</h3>
-            <iframe src="https://youtube.com/embed/cAtLTuNi4dc?feature=share" allowfullscreen></iframe>
-            <div class="project-links">
-                <a href="https://apps.apple.com/us/app/saw-car/id1667867473">
-                    <img src="ios-icon.png" alt="iOS">
-                </a>
-            </div>
-        </div>
-
-        <div class="project-item">
-            <h3>Join the Team</h3>
-            <iframe src="https://youtube.com/embed/Un-EgWZGRm8?feature=share" allowfullscreen></iframe>
-            <div class="project-links">
-                <a href="https://apps.apple.com/tr/app/join-the-team/id1613534259?l=tr">
-                    <img src="ios-icon.png" alt="iOS">
-                </a>
-            </div>
-        </div>
-
-        <div class="project-item">
-            <h3>Money Fishing</h3>
-            <iframe src="https://youtube.com/embed/61m_RzHVkkQ?feature=share" allowfullscreen></iframe>
-            <div class="project-links">
-                <a href="https://apps.apple.com/us/app/money-fishing/id1633604042">
-                    <img src="ios-icon.png" alt="iOS">
-                </a>
-            </div>
-        </div>
-
-        <div class="project-item">
-            <h3>Furniture Factory</h3>
-            <iframe src="https://youtube.com/embed/5bPQn_cYca0?feature=share" allowfullscreen></iframe>
-            <div class="project-links">
-                <a href="https://apps.apple.com/us/app/furniture-factory/id1630323596">
-                    <img src="ios-icon.png" alt="iOS">
-                </a>
-            </div>
-        </div>
-
-        <div class="project-item">
-            <h3>Throw'n Spin</h3>
-            <iframe src="https://youtube.com/embed/TF_Ip3898Bs?feature=share" allowfullscreen></iframe>
-            <div class="project-links">
-                <a href="https://apps.apple.com/us/app/thrown-spin/id6443603710">
-                    <img src="ios-icon.png" alt="iOS">
-                </a>
-            </div>
-        </div>
-
-        <div class="project-item">
-            <h3>Pull The Treasure</h3>
-            <iframe src="https://youtube.com/embed/b8cX95yUl7w?feature=share" allowfullscreen></iframe>
-            <div class="project-links">
-                <a href="https://apps.apple.com/us/app/pull-the-treasure/id6446171012">
-                    <img src="ios-icon.png" alt="iOS">
-                </a>
-            </div>
-        </div>
-
-    </section>
-
-    <div class="social-icons">
-        <a href="https://www.linkedin.com/in/muhammet-mustafa-hastaoğlugil-420999236/" target="_blank"><i
-                class="fab fa-linkedin"></i></a>
+      </div>
+      <!-- Diğer projeler de aynı yapıyla buraya eklenmeli -->
     </div>
+  </section>
 
-    <footer>
-        <p>2024 Muhammet Mustafa HASTAOĞLUGİL</p>
-    </footer>
-    <script src="script.js"></script>
+  <div class="social-icons">
+    <a href="https://www.linkedin.com/in/muhammet-mustafa-hastaoğlugil-420999236/" target="_blank">
+      <i class="fab fa-linkedin"></i>
+    </a>
+  </div>
+
+  <footer>
+    <p>2024 Muhammet Mustafa HASTAOĞLUGİL</p>
+  </footer>
+
+  <script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+      document.body.classList.toggle("dark");
+      document.documentElement.dataset.theme = document.body.classList.contains("dark") ? "dark" : "";
+    });
+  </script>
+  <script src="script.js"></script>
 </body>
 
 </html>
