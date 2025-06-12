@@ -136,59 +136,6 @@
             background: linear-gradient(45deg, #333, #444, #555);
             color: white;
         }
-
-        :root {
-            --bg-color: #f5f7fa;
-            --card-bg: #ffffff;
-            --text-color: #1f2937;
-            --accent-color: #3b82f6;
-            --button-bg: #3b82f6;
-            --button-text: #ffffff;
-        }
-
-        [data-theme="dark"] {
-            --bg-color: #111827;
-            --card-bg: #1f2937;
-            --text-color: #f5f7fa;
-            --accent-color: #f97316;
-            --button-bg: #f97316;
-            --button-text: #ffffff;
-        }
-
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-color);
-        }
-
-        /* Tema butonu */
-        #theme-toggle {
-            position: fixed;
-            top: 1rem;
-            right: 1rem;
-            background-color: var(--button-bg);
-            color: var(--button-text);
-            border: none;
-            padding: 0.5rem 1rem;
-            border-radius: 8px;
-            cursor: pointer;
-            z-index: 1000;
-            transition: background-color 0.3s ease;
-        }
-
-        #theme-toggle:hover {
-            background-color: var(--accent-color);
-        }
-
-        .project-item {
-            background-color: var(--card-bg);
-            color: var(--text-color);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        }
-
-        .project-item:hover {
-            background-color: var(--accent-color);
-            color: white;
-        }
     </style>
 </head>
 
@@ -198,7 +145,6 @@
     <header>
         <h1>Muhammet Mustafa HASTAOĞLUGİL Portfolio</h1>
     </header>
-    <button id="theme-toggle">🌓 Theme</button>
 
     <section class="about">
         <h2>About Me</h2>
@@ -435,11 +381,6 @@
     <footer>
         <p>2024 Muhammet Mustafa HASTAOĞLUGİL</p>
     </footer>
-    const toggleBtn = document.getElementById('theme-toggle');
-    toggleBtn.addEventListener('click', () => {
-    const isDark = document.documentElement.dataset.theme === 'dark';
-    document.documentElement.dataset.theme = isDark ? '' : 'dark';
-    });
     <script src="script.js"></script>
 </body>
 
